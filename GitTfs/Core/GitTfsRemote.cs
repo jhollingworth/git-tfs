@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text.RegularExpressions;
 using Sep.Git.Tfs.Commands;
 using Sep.Git.Tfs.Core.TfsInterop;
@@ -26,6 +27,11 @@ namespace Sep.Git.Tfs.Core
             this.globals = globals;
             this.stdout = stdout;
             Tfs = tfsHelper;
+
+            if (!string.IsNullOrEmpty(globals.Username) && !string.IsNullOrEmpty(globals.Password))
+            {
+                Tfs.Credentials = new NetworkCredential(globals.Username, globals.Password);
+            }
         }
 
         public bool IsDerived

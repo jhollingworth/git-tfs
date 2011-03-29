@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net;
 using Microsoft.TeamFoundation.Server;
 using Microsoft.TeamFoundation.VersionControl.Client;
 using Microsoft.TeamFoundation.WorkItemTracking.Client;
@@ -155,6 +156,9 @@ namespace Sep.Git.Tfs.VsCommon
                 }
             }
         }
+
+        public NetworkCredential Credentials { get; set; }
+
 
         public bool HasShelveset(string shelvesetName)
         {

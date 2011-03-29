@@ -23,6 +23,20 @@ namespace Sep.Git.Tfs
         [UseNameAsLongOption(false)]
         public bool ShowVersion { get; set; }
 
+        [OptDef(OptValType.ValueOpt)]
+        [ShortOptionName('u')]
+        [ShortOptionName('U')]
+        [LongOptionName("username")]
+        [UseNameAsLongOption(false)]
+        public string Username { get; set; }
+
+        [OptDef(OptValType.ValueOpt)]
+        [ShortOptionName('p')]
+        [ShortOptionName('P')]
+        [LongOptionName("password")]
+        [UseNameAsLongOption(false)]
+        public string Password { get; set; }
+
         [OptDef(OptValType.Flag)]
         [ShortOptionName('d')]
         [LongOptionName("debug")]

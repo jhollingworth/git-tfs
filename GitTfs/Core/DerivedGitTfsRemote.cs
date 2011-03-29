@@ -162,6 +162,18 @@ namespace Sep.Git.Tfs.Core
             throw new NotImplementedException();
         }
 
+        public string Password
+        {
+            get { throw new NotImplementedException(); }
+            set { throw new NotImplementedException(); }
+        }
+
+        public string Username
+        {
+            get { throw new NotImplementedException(); }
+            set { throw new NotImplementedException(); }
+        }
+
         #endregion
     }
 }

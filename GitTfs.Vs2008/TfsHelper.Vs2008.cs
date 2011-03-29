@@ -29,7 +29,8 @@ namespace Sep.Git.Tfs.Vs2008
             }
             else
             {
-                _server = new TeamFoundationServer(Url, new UICredentialsProvider());
+                _server = Credentials != null ? new TeamFoundationServer(Url, Credentials) : new TeamFoundationServer(Url, new UICredentialsProvider());
+
                 _server.EnsureAuthenticated();
             }
         }

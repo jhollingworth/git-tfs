@@ -37,7 +37,7 @@ namespace Sep.Git.Tfs.Vs2010
             }
             else
             {
-                _server = new TfsTeamProjectCollection(new Uri(Url), new UICredentialsProvider());
+                _server = Credentials != null ? new TfsTeamProjectCollection(new Uri(Url), Credentials) : new TfsTeamProjectCollection(new Uri(Url), new UICredentialsProvider());
             }
         }
 
